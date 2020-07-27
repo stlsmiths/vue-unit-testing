@@ -26,6 +26,7 @@ describe('LoginForm unit tests',  () => {
 
     expect( formCalls ).toHaveLength(1)
     expect( formCalls[0][0].name ).toBe('Mark')
+    expect( formCalls[0][0] ).toMatchObject( { name: 'Mark' })
   })
 
 });

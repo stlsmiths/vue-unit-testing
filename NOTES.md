@@ -50,12 +50,27 @@ getMessage.mockResolvedValueOnce( obj )
 
 await flushPromises()
 
+I had an ERROR, and these tests actually helped me find it!
+(I was setting `this.message` on error in comp instead of `this.error`)
 
 #### Lesson 6 - Stubs for child components
 
 A "stub" is just a canned placeholder for a child component.
 
+Advantages of "stub":
+ 1. Helps isolate testing 
+ 2. Test one thing at a time
+ 3. Can pinpoint part hart of code is broken
 
+Disadvantages of "stub":
+ 1. Maintenance costs ... added work
+ 2. Decreasing code coverage
+ 3. Reduced confidence in code
+
+Can use shallowMount() ... not always supported, like
+in "Vue Testing Library"
+
+FINAL code https://github.com/Code-Pop/Unit-Testing/tree/Lesson6_FINAL
 
 
 

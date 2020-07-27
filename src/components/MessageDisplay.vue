@@ -18,7 +18,7 @@ export default {
       try{
         this.message = await getMessage()
       } catch (err) {
-        this.message = 'Oopps, something went wrong!'
+        this.error = 'Oopps, something went wrong!'
       }
     }
   }

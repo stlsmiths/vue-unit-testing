@@ -32,7 +32,32 @@ Find the input textbox, then `input.setValue('string')`
 I'm getting a fail, `formSubmittedCall` as undefined
 Tried running $nextTick() and @submit.prevent.native to no avail
 
-FIXED:  I had the template form inside a div, when I removed ... this worked  
+ISSUE:  For my template I had the <form> inside a <div>, which was causing issues
+
+FIX:  I extract the "form" element using `wrapper.find('form')` and then trigger the
+submit off that ... it works
+
+#### Lesson 5 - Testing API calls 
+
+Created a simple db.json and json-server.
+Created a service to call the api.
+Created MessageDisplay component to make call.
+
+Mocking of api call ...
+jest.mock()
+
+getMessage.mockResolvedValueOnce( obj )
+
+await flushPromises()
+
+
+#### Lesson 6 - Stubs for child components
+
+A "stub" is just a canned placeholder for a child component.
+
+
+
+
 
 
 

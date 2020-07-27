@@ -22,7 +22,7 @@ describe('LoginForm unit tests',  () => {
     wrapper.find('form').trigger('submit')
 
     const formCalls = wrapper.emitted('formSubmit')
-    console.log('formsubcalls', formCalls )
+    // console.log('formsubcalls', formCalls )
 
     expect( formCalls ).toHaveLength(1)
     expect( formCalls[0][0].name ).toBe('Mark')

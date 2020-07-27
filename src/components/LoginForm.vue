@@ -1,9 +1,12 @@
 <template>
-  <form @submit.prevent="onSubmit">
-    <input type="text" v-model="name" />
-    <button type="submit">Submit</button>
-  </form>
+  <div>
+    <form @submit.prevent="onSubmit">
+      <input data-testid="name-input" type="text" v-model="name" />
+      <button type="submit">Submit</button>
+    </form>
+  </div>
 </template>
+x
 <script>
 export default {
   data() {
@@ -12,8 +15,9 @@ export default {
     }
   },
   methods: {
-    onSubmit() {
-      this.$emit('formSubmitted', { name: this.name })
+    onSubmit(e) {
+      this.$emit( 'formSubmit', { name: this.name })
+      // e.preventDefault()
     }
   }
 }

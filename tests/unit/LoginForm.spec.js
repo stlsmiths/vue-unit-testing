@@ -1,5 +1,5 @@
-import LoginForm from "@/components/LoginFormOLD.vue"
-import { mount } from '@vue/test-utils'
+import LoginForm from "@/components/LoginForm.vue"
+import { mount, shallowMount } from '@vue/test-utils'
 
 describe('LoginForm unit tests',  () => {
 
@@ -14,19 +14,18 @@ describe('LoginForm unit tests',  () => {
 
   it('emits an event with a user from data payload', async () => {
     const wrapper = mount(LoginForm)
-    //const input = wrapper.find('[data-testid="name-input"]')
-    const input = wrapper.find('input')
+    const input = wrapper.find('[data-testid="name-input"]')
+    // const input = wrapper.find('input')
     input.setValue('Mark')
 
-    // await wrapper.vm.$nextTick()
-    
-    wrapper.trigger('submit')
+    // need to extract <form>, then do the "submit"
+    wrapper.find('form').trigger('submit')
 
     const formCalls = wrapper.emitted('formSubmit')
     console.log('formsubcalls', formCalls )
 
     expect( formCalls ).toHaveLength(1)
-    
+    expect( formCalls[0][0].name ).toBe('Mark')
   })
 
 });

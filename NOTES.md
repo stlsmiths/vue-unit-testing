@@ -29,6 +29,10 @@ could also use wrapper.setData() or wrapper.vm.$props ... but this is better
 
 Find the input textbox, then `input.setValue('string')`
 
+I'm getting a fail, `formSubmittedCall` as undefined
+Tried running $nextTick() and @submit.prevent.native to no avail
+
+FIXED:  I had the template form inside a div, when I removed ... this worked  
 
 
 
